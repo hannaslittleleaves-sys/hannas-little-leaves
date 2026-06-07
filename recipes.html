@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes | Hanna's Little Leaves</title>
+  <meta name="description" content="Creative recipes using fresh microgreens, pea shoots, and sunflower shoots from Hanna's Little Leaves farm in Franklin, WI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .featured-recipe {
+      display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--white); border-radius: 6px;
+      overflow: hidden; box-shadow: var(--shadow-lg);
+      margin-bottom: 80px;
+    }
+    .featured-recipe-img {
+      min-height: 400px; position: relative; overflow: hidden;
+    }
+    .featured-recipe-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      position: absolute; top: 0; left: 0;
+    }
+    .featured-badge {
+      position: absolute; top: 24px; left: 24px; z-index: 2;
+      background: var(--gold); color: var(--white);
+      font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+      font-weight: 700; padding: 7px 14px; border-radius: 2px;
+    }
+    .featured-recipe-body { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-recipe-body .recipe-meta { margin-bottom: 12px; }
+    .featured-recipe-body h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 14px; }
+    .featured-recipe-body p { font-size: 1rem; line-height: 1.8; margin-bottom: 24px; }
+    .recipe-stats { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+    .recipe-stat { text-align: center; }
+    .recipe-stat .stat-val { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--green); display: block; }
+    .recipe-stat .stat-label { font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); }
+    .recipe-divider { width: 1px; background: rgba(61,47,38,0.1); }
+    .ingredients-tag { font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: var(--dark); opacity: 0.6; margin-bottom: 10px; display: block; }
+    .ingredient-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .ingredient-tag {
+      background: var(--bg); padding: 6px 14px; border-radius: 20px;
+      font-size: 0.82rem; color: var(--dark); border: 1px solid rgba(61,47,38,0.1);
+    }
+    .tip-box {
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      color: var(--white); padding: 32px 36px; border-radius: 6px; margin-top: 60px;
+    }
+    .tip-box h3 { color: var(--white); margin-bottom: 12px; font-size: 1.2rem; }
+    .tip-box p { color: rgba(255,255,255,0.85); opacity: 1; font-size: 0.95rem; line-height: 1.75; }
+    .tip-box i { color: var(--gold); margin-right: 8px; }
+    @media (max-width: 768px) {
+      .featured-recipe { grid-template-columns: 1fr; }
+      .featured-recipe-img { min-height: 240px; }
+      .featured-recipe-body { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar solid" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/LOGO.png" alt="Hanna's Little Leaves" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="logo-name">Hanna's Little Leaves</span>
+        <span class="logo-tagline">Microgreens Farm · Franklin, WI</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="recipes.html" class="active">Recipes</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="shop.html" class="nav-btn">Order Now</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="shop.html" class="mobile-cta">Order Now</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="ph-label">From Our Kitchen</span>
+    <h1>Recipes &amp; Inspiration</h1>
+    <p>Simple, beautiful recipes that let our fresh microgreens shine. From quick weeknight meals to impressive weekend spreads.</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <section class="section" style="background: var(--bg);">
+    <div class="container">
+
+      <!-- WHY MICROGREENS -->
+      <div class="featured-recipe">
+        <div class="featured-recipe-img">
+          <span class="featured-badge">Why Microgreens</span>
+          <img src="images/greens.jpg" alt="Fresh Microgreens">
+        </div>
+        <div class="featured-recipe-body">
+          <h2>The Power of Microgreens</h2>
+          <p>Tiny but mighty — microgreens contain up to 40x more vitamins, minerals, and antioxidants than mature plants. Just a small handful adds incredible nutrition to any meal.</p>
+          <ul style="list-style: none; padding: 0; margin: 28px 0 32px; display: flex; flex-direction: column; gap: 16px;">
+            <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 0.97rem; line-height: 1.6;">
+              <span style="font-size: 1.3rem; flex-shrink: 0;">🌱</span>
+              <span><strong>Up to 40x more nutrients</strong> than mature greens</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 0.97rem; line-height: 1.6;">
+              <span style="font-size: 1.3rem; flex-shrink: 0;">⚡</span>
+              <span><strong>Ready to eat in seconds</strong> — no cooking needed</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 0.97rem; line-height: 1.6;">
+              <span style="font-size: 1.3rem; flex-shrink: 0;">🫀</span>
+              <span><strong>Supports heart health,</strong> immunity, and energy</span>
+            </li>
+          </ul>
+          <a href="shop.html" class="btn btn-primary">Shop Fresh Microgreens</a>
+        </div>
+      </div>
+
+      <!-- RECIPE GRID -->
+      <div class="section-header">
+        <span class="label">All Recipes</span>
+        <h2>More Ways to Enjoy Your Greens</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid-3">
+
+        <div class="recipe-card">
+          <div class="recipe-img"><img src="images/Bread.jpg" alt="Microgreen Grilled Cheese"></div>
+          <div class="recipe-card-body">
+            <div class="recipe-meta">
+              <span><i class="fa-solid fa-clock"></i> 10 min</span>
+              <span><i class="fa-solid fa-signal"></i> Easy</span>
+            </div>
+            <h3>Microgreen Grilled Cheese</h3>
+            <p>A golden, gooey grilled cheese elevated with a layer of fresh microgreens tucked inside. The greens wilt just slightly from the warmth, adding color, nutrition, and a delicate fresh note to every bite.</p>
+            <details>
+              <summary style="cursor:pointer; font-size:0.82rem; font-weight:700; color:var(--green); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Show Recipe</summary>
+              <div style="margin-top:12px; font-size:0.88rem; line-height:1.8; color:var(--dark); opacity:0.8;">
+                <strong>Ingredients:</strong> 2 slices sourdough or country bread, 2 oz sharp cheddar (sliced), 1 large handful microgreens, butter, salt.<br><br>
+                <strong>Method:</strong> Butter both sides of bread. Layer cheese on one slice. Cook in a skillet over medium-low heat until golden brown and cheese is melted. Open the sandwich, tuck in fresh microgreens, close, and serve immediately.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <div class="recipe-img"><img src="images/salad.jpg" alt="Fresh Microgreen Salad"></div>
+          <div class="recipe-card-body">
+            <div class="recipe-meta">
+              <span><i class="fa-solid fa-clock"></i> 10 min</span>
+              <span><i class="fa-solid fa-signal"></i> Easy</span>
+            </div>
+            <h3>Fresh Microgreen Salad</h3>
+            <p>A simple, vibrant salad that lets our fresh microgreens shine. Dressed lightly with lemon and olive oil so nothing overpowers the delicate, just-harvested flavors of our greens.</p>
+            <details>
+              <summary style="cursor:pointer; font-size:0.82rem; font-weight:700; color:var(--green); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Show Recipe</summary>
+              <div style="margin-top:12px; font-size:0.88rem; line-height:1.8; color:var(--dark); opacity:0.8;">
+                <strong>Ingredients:</strong> 2 trays mixed microgreens, cherry tomatoes, cucumber, thinly sliced radish, lemon, extra-virgin olive oil, flaky sea salt, cracked black pepper.<br><br>
+                <strong>Method:</strong> Arrange microgreens on a platter or in a wide bowl. Scatter tomatoes, cucumber, and radish on top. Drizzle generously with olive oil and squeeze fresh lemon over everything. Season with flaky salt and cracked pepper. Serve immediately.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <div class="recipe-img"><img src="images/salad 2.jpg" alt="Microgreen Bowl"></div>
+          <div class="recipe-card-body">
+            <div class="recipe-meta">
+              <span><i class="fa-solid fa-clock"></i> 25 min</span>
+              <span><i class="fa-solid fa-signal"></i> Easy</span>
+            </div>
+            <h3>Microgreen Bowl</h3>
+            <p>A nourishing, build-your-own bowl piled with whole grains, roasted vegetables, and a generous crown of fresh microgreens. Versatile, colorful, and endlessly customizable.</p>
+            <details>
+              <summary style="cursor:pointer; font-size:0.82rem; font-weight:700; color:var(--green); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Show Recipe</summary>
+              <div style="margin-top:12px; font-size:0.88rem; line-height:1.8; color:var(--dark); opacity:0.8;">
+                <strong>Ingredients:</strong> 1 cup cooked farro or brown rice, 1 tray microgreens, roasted chickpeas, sliced avocado, cucumber, tahini dressing, lemon, olive oil.<br><br>
+                <strong>Method:</strong> Cook grains. Roast chickpeas at 400°F with olive oil and spices until crispy, about 25 min. Assemble bowls with grains as the base, then microgreens, chickpeas, avocado, and cucumber. Drizzle with tahini dressing and a squeeze of lemon.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <div class="recipe-img"><img src="images/Bread 2.jpg" alt="Open Face Microgreen Toast"></div>
+          <div class="recipe-card-body">
+            <div class="recipe-meta">
+              <span><i class="fa-solid fa-clock"></i> 10 min</span>
+              <span><i class="fa-solid fa-signal"></i> Easy</span>
+            </div>
+            <h3>Open Face Microgreen Toast</h3>
+            <p>A beautiful open-face toast topped with creamy ricotta, a drizzle of honey, and a generous pile of fresh microgreens. Effortlessly elegant for breakfast or a quick lunch.</p>
+            <details>
+              <summary style="cursor:pointer; font-size:0.82rem; font-weight:700; color:var(--green); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Show Recipe</summary>
+              <div style="margin-top:12px; font-size:0.88rem; line-height:1.8; color:var(--dark); opacity:0.8;">
+                <strong>Ingredients:</strong> 2 slices thick crusty bread, ¼ cup ricotta or goat cheese, 1 tray microgreens, 1 tbsp honey, lemon zest, flaky salt, drizzle of olive oil.<br><br>
+                <strong>Method:</strong> Toast bread until golden and crisp. Spread generously with ricotta or goat cheese. Top with a mound of fresh microgreens. Drizzle with honey and olive oil, add a pinch of lemon zest and flaky salt. Serve open-face immediately.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <div class="recipe-img"><img src="images/bread 3.jpg" alt="Microgreen Sandwich"></div>
+          <div class="recipe-card-body">
+            <div class="recipe-meta">
+              <span><i class="fa-solid fa-clock"></i> 10 min</span>
+              <span><i class="fa-solid fa-signal"></i> Easy</span>
+            </div>
+            <h3>Microgreen Sandwich</h3>
+            <p>A simple, satisfying sandwich made extraordinary by a generous layer of fresh microgreens. Use your favorite fillings — the greens add crunch, color, and nutrition to absolutely anything.</p>
+            <details>
+              <summary style="cursor:pointer; font-size:0.82rem; font-weight:700; color:var(--green); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Show Recipe</summary>
+              <div style="margin-top:12px; font-size:0.88rem; line-height:1.8; color:var(--dark); opacity:0.8;">
+                <strong>Ingredients:</strong> 2 slices bread of your choice, your favorite protein (turkey, tuna, hummus, or cheese), 1 large handful microgreens, tomato, your favorite condiments, salt &amp; pepper.<br><br>
+                <strong>Method:</strong> Toast bread if desired. Spread condiments on both slices. Layer your protein and tomato. Add a generous handful of fresh microgreens. Season lightly, close the sandwich, and enjoy immediately for best crunch.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <div class="recipe-img"><img src="images/Scramble Egg.jpg" alt="Microgreen Scrambled Eggs"></div>
+          <div class="recipe-card-body">
+            <div class="recipe-meta">
+              <span><i class="fa-solid fa-clock"></i> 10 min</span>
+              <span><i class="fa-solid fa-signal"></i> Easy</span>
+            </div>
+            <h3>Microgreen Scrambled Eggs</h3>
+            <p>Soft, creamy scrambled eggs finished with a fresh handful of microgreens right before serving. The eggs stay perfectly tender while the greens add a beautiful, fresh contrast in every bite.</p>
+            <details>
+              <summary style="cursor:pointer; font-size:0.82rem; font-weight:700; color:var(--green); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Show Recipe</summary>
+              <div style="margin-top:12px; font-size:0.88rem; line-height:1.8; color:var(--dark); opacity:0.8;">
+                <strong>Ingredients:</strong> 3–4 eggs, 1 tbsp butter, 2 tbsp cream or milk, 1 large handful microgreens, salt &amp; pepper, fresh chives (optional).<br><br>
+                <strong>Method:</strong> Whisk eggs with cream, salt, and pepper. Melt butter in a non-stick pan over low heat. Add eggs and stir slowly and continuously until just barely set and still glossy. Remove from heat immediately. Top with fresh microgreens and chives. Serve right away.
+              </div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TIP BOX -->
+      <div class="tip-box">
+        <h3><i class="fa-solid fa-lightbulb"></i> Pro Tip: When to Add Your Microgreens</h3>
+        <p>Microgreens are best added <strong>raw and at the very end</strong> of cooking — think of them as a finishing ingredient like fresh herbs. Heat destroys their delicate nutrients and wilts their beautiful texture. The exception is pea shoots, which can handle a quick 60-second sauté over high heat and are delicious that way. Sunflower shoots hold up even a little longer. When in doubt, add them after the heat is off.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <span class="label">Fresh Ingredients Await</span>
+        <h2>Order Your Greens Today</h2>
+        <p>All these recipes start with the freshest microgreens from our farm to your table.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="shop.html" class="btn btn-gold btn-lg">Shop Now</a>
+        <a href="contact.html" class="btn btn-outline-white btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-name">Hanna's Little Leaves</span>
+        <span class="logo-tagline">Microgreens Farm · Franklin, WI</span>
+        <p>A family farm growing premium microgreens with love. Fresh, clean, and harvested just for you right here in Franklin, Wisconsin.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/hannalittleleaves/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/hannaslittleleaves" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linktr.ee/hannaslittleleaves" target="_blank" rel="noopener" class="social-link" aria-label="Linktree"><i class="fa-brands fa-linktree"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html">Fresh Microgreens</a></li>
+          <li><a href="shop.html">Pea Shoots</a></li>
+          <li><a href="shop.html">Sunflower Shoots</a></li>
+          <li><a href="shop.html">DIY Grow Kit</a></li>
+          <li><a href="shop.html">Subscriptions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:2622215062" style="color:inherit;">(262) 221-5062</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:hannaslittleleaves@gmail.com" style="color:inherit;">hannaslittleleaves@gmail.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <span>Franklin, Wisconsin 53132</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
+        <a href="https://www.facebook.com/hannalittleleaves/" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">📘 Facebook</a>
+        <a href="https://www.instagram.com/hannaslittleleaves" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">📷 Instagram</a>
+        <a href="https://linktr.ee/hannaslittleleaves" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">🔗 Linktree</a>
+      </div>
+      <p>&copy; 2025 Hanna's Little Leaves. All rights reserved.</p>
+      <p>Grown with love in Franklin, WI</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Hanna's Little Leaves</title>
+  <meta name="description" content="Contact Hanna's Little Leaves microgreens farm in Franklin, Wisconsin. Call (262) 221-5062 to place an order or ask a question.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .map-placeholder {
+      width: 100%; height: 320px; border-radius: 6px;
+      background: linear-gradient(135deg, #1e4229 0%, #3a7a51 50%, #2D5F3F 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+      box-shadow: var(--shadow);
+      position: relative; overflow: hidden; margin-top: 32px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .map-placeholder:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .map-placeholder::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .map-placeholder .map-pin { font-size: 3rem; position: relative; z-index: 1; }
+    .map-placeholder p { color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 600; position: relative; z-index: 1; }
+    .map-placeholder span { color: rgba(255,255,255,0.6); font-size: 0.8rem; position: relative; z-index: 1; }
+    .success-msg {
+      display: none; background: var(--green); color: var(--white);
+      padding: 16px 20px; border-radius: 4px; margin-bottom: 20px;
+      font-size: 0.95rem; font-weight: 600;
+    }
+    .success-msg.show { display: block; }
+    .contact-section-alt { background: var(--bg-alt); padding: 80px 6%; }
+    .social-contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 700px; }
+    .social-contact-card {
+      background: var(--white); border-radius: 6px; padding: 28px 24px;
+      text-align: center; box-shadow: var(--shadow);
+      transition: var(--transition); text-decoration: none;
+    }
+    .social-contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .social-contact-card i { font-size: 1.6rem; margin-bottom: 10px; display: block; }
+    .social-contact-card span { font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--dark); }
+    @media (max-width: 600px) {
+      .social-contact-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar solid" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/LOGO.png" alt="Hanna's Little Leaves" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="logo-name">Hanna's Little Leaves</span>
+        <span class="logo-tagline">Microgreens Farm · Franklin, WI</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a href="shop.html" class="nav-btn">Order Now</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="shop.html" class="mobile-cta">Order Now</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="ph-label">We'd Love to Hear From You</span>
+    <h1>Get in Touch</h1>
+    <p>Questions about our products? Want to place an order? Just want to say hi? We're a real family and we respond to every message personally.</p>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="section" style="background: var(--bg);">
+    <div class="contact-grid">
+
+      <!-- INFO COLUMN -->
+      <div>
+        <span class="label">Contact Information</span>
+        <h2 style="margin-bottom: 8px;">Let's Connect</h2>
+        <div class="divider divider-left"></div>
+        <p style="margin-bottom: 36px;">The easiest way to order is to call or text us. We check messages throughout the day and typically respond within a couple of hours.</p>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <h4>Phone &amp; Text</h4>
+            <p><a href="tel:2622215062">(262) 221-5062</a><br>
+            <span style="font-size: 0.85rem; opacity: 0.65;">Call or text anytime during business hours</span></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:hannaslittleleaves@gmail.com">hannaslittleleaves@gmail.com</a><br>
+            <span style="font-size: 0.85rem; opacity: 0.65;">We respond to all emails within 24 hours</span></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <h4>Location</h4>
+            <p>Franklin, Wisconsin 53132<br>
+            <span style="font-size: 0.85rem; opacity: 0.65;">Pickup by appointment in Franklin</span></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4>Business Hours</h4>
+            <div class="hours-grid">
+              <div class="hour-row"><span class="day">Monday – Friday</span><span class="time">9 AM – 5 PM</span></div>
+              <div class="hour-row"><span class="day">Saturday</span><span class="time">10 AM – 2 PM</span></div>
+              <div class="hour-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAP PLACEHOLDER -->
+        <a href="https://maps.google.com/?q=Franklin,Wisconsin+53132" target="_blank" rel="noopener" class="map-placeholder" aria-label="View Franklin, WI on Google Maps">
+          <span class="map-pin">📍</span>
+          <p>Franklin, Wisconsin</p>
+          <span>Click to open in Google Maps</span>
+        </a>
+      </div>
+
+      <!-- FORM COLUMN -->
+      <div class="form-card">
+        <h3>Stay in the Loop 🌱</h3>
+        <p>Subscribe to get weekly harvest updates, seasonal specials, new recipe ideas, and farm news delivered straight to your inbox. No spam — just good green stuff.</p>
+
+        <form action="https://gmail.us9.list-manage.com/subscribe/post?u=53d1e3d9e43d9d3f13e029b97&id=eec6f345ac&f_id=00d057e1f0" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate style="margin-top: 28px;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mce-FNAME">First Name</label>
+              <input type="text" name="FNAME" id="mce-FNAME" placeholder="Your first name">
+            </div>
+            <div class="form-group">
+              <label for="mce-LNAME">Last Name</label>
+              <input type="text" name="LNAME" id="mce-LNAME" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mce-EMAIL">Email Address *</label>
+            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="you@example.com" required>
+          </div>
+          <!-- Honeypot — do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_53d1e3d9e43d9d3f13e029b97_eec6f345ac" tabindex="-1" value="">
+          </div>
+          <button type="submit" name="subscribe" class="btn btn-primary" style="width:100%; font-size:0.88rem; padding:17px; margin-top:8px;">
+            <i class="fa-solid fa-seedling" style="margin-right:8px;"></i>Subscribe to Farm Updates
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONNECT ON SOCIAL -->
+  <section class="contact-section-alt">
+    <div class="container" style="text-align: center;">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <span class="label">Follow Along</span>
+        <h2>Find Us on Social Media</h2>
+        <div class="divider"></div>
+        <p>We share growing updates, harvest photos, and recipes. Come grow with us!</p>
+      </div>
+      <div class="social-contact-grid" style="margin: 0 auto;">
+        <a href="https://www.facebook.com/hannalittleleaves/" target="_blank" rel="noopener" class="social-contact-card" aria-label="Facebook">
+          <i class="fab fa-facebook-f" style="color: #1877F2;"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/hannaslittleleaves" target="_blank" rel="noopener" class="social-contact-card" aria-label="Instagram">
+          <i class="fab fa-instagram" style="color: #E1306C;"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://linktr.ee/hannaslittleleaves" target="_blank" rel="noopener" class="social-contact-card" aria-label="Linktree">
+          <i class="fa-brands fa-linktree" style="color: #43e660;"></i>
+          <span>Linktree</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <span class="label">Skip the Form</span>
+        <h2>Just Call or Text Us</h2>
+        <p>The fastest way to get fresh greens is to reach out directly. We're a real family — not an automated system.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="tel:2622215062" class="btn btn-gold btn-lg">
+          <i class="fa-solid fa-phone" style="margin-right: 8px;"></i>(262) 221-5062
+        </a>
+        <a href="shop.html" class="btn btn-outline-white btn-lg">Browse Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-name">Hanna's Little Leaves</span>
+        <span class="logo-tagline">Microgreens Farm · Franklin, WI</span>
+        <p>A family farm growing premium microgreens with love. Fresh, clean, and harvested just for you right here in Franklin, Wisconsin.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/hannalittleleaves/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/hannaslittleleaves" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linktr.ee/hannaslittleleaves" target="_blank" rel="noopener" class="social-link" aria-label="Linktree"><i class="fa-brands fa-linktree"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html">Fresh Microgreens</a></li>
+          <li><a href="shop.html">Pea Shoots</a></li>
+          <li><a href="shop.html">Sunflower Shoots</a></li>
+          <li><a href="shop.html">DIY Grow Kit</a></li>
+          <li><a href="shop.html">Subscriptions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:2622215062" style="color:inherit;">(262) 221-5062</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:hannaslittleleaves@gmail.com" style="color:inherit;">hannaslittleleaves@gmail.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <span>Franklin, Wisconsin 53132</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
+        <a href="https://www.facebook.com/hannalittleleaves/" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">📘 Facebook</a>
+        <a href="https://www.instagram.com/hannaslittleleaves" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">📷 Instagram</a>
+        <a href="https://linktr.ee/hannaslittleleaves" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">🔗 Linktree</a>
+      </div>
+      <p>&copy; 2025 Hanna's Little Leaves. All rights reserved.</p>
+      <p>Grown with love in Franklin, WI</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+  </script>
+</body>
+</html>

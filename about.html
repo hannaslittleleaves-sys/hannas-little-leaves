@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Hanna's Little Leaves</title>
+  <meta name="description" content="Meet the Wright family behind Hanna's Little Leaves microgreens farm in Franklin, Wisconsin. Learn our story, values, and growing process.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .stat-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      background: var(--green); padding: 0;
+    }
+    .stat-box {
+      padding: 44px 28px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-box:last-child { border-right: none; }
+    .stat-box .num {
+      font-family: var(--font-serif); font-size: 3rem; font-weight: 900;
+      color: var(--white); line-height: 1; display: block; margin-bottom: 8px;
+    }
+    .stat-box .num span { color: var(--gold); }
+    .stat-box p { color: rgba(255,255,255,0.7); font-size: 0.85rem; letter-spacing: 1px; opacity: 1; }
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .process-img {
+      background: linear-gradient(135deg, #2D5F3F 0%, #5a9e71 100%);
+      border-radius: 6px; min-height: 420px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7rem; box-shadow: var(--shadow-lg);
+    }
+    @media (max-width: 1024px) {
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .stat-box:nth-child(2) { border-right: none; }
+      .stat-box:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.1); border-top: 1px solid rgba(255,255,255,0.1); }
+      .stat-box:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); }
+      .process-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .stat-box { padding: 32px 20px; }
+      .stat-box .num { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar solid" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/LOGO.png" alt="Hanna's Little Leaves" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="logo-name">Hanna's Little Leaves</span>
+        <span class="logo-tagline">Microgreens Farm · Franklin, WI</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="shop.html" class="nav-btn">Order Now</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="shop.html" class="mobile-cta">Order Now</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="ph-label">Our Story</span>
+    <h1>A Family's Labor of Love</h1>
+    <p>We're the Wright family — growing microgreens in Franklin, Wisconsin with care, intention, and a whole lot of heart.</p>
+  </header>
+
+  <!-- OUR STORY -->
+  <section class="section" style="background: var(--bg);">
+    <div class="container">
+      <div class="story-grid">
+        <img src="images/Family Photo.jpg" alt="The Wright Family" class="story-img">
+        <div>
+          <span class="label">Our Story</span>
+          <div class="divider divider-left"></div>
+          <p style="margin-bottom: 28px;">Named after our little leaf. Hanna's Little Leaves is a small, family-run business inspired by our daughter, Johanna ("Hanna"), who loves watering plants, checking sprouts, and tasting everything we grow. We grow microgreens using seeds, renewable energy, and Wisconsin soil, based in Franklin, Wisconsin, focused on bringing fresh, sustainable, and locally grown products to our community.</p>
+          <p style="margin-bottom: 32px; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--green);">— The Wright Family 🌱</p>
+          <a href="shop.html" class="btn btn-primary">Shop Our Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="num">24<span>hr</span></span>
+      <p>From harvest to your hands</p>
+    </div>
+    <div class="stat-box">
+      <span class="num">0</span>
+      <p>Pesticides or chemicals used</p>
+    </div>
+    <div class="stat-box">
+      <span class="num">9<span>+</span></span>
+      <p>Microgreen varieties grown</p>
+    </div>
+    <div class="stat-box">
+      <span class="num">100<span>%</span></span>
+      <p>Family owned &amp; operated</p>
+    </div>
+  </div>
+
+  <!-- OUR VALUES -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">What We Stand For</span>
+        <h2>Our Values</h2>
+        <div class="divider"></div>
+        <p>These aren't just words on a wall. They're the principles that guide every seed we plant and every tray we harvest.</p>
+      </div>
+      <div class="grid-3">
+        <div class="value-card">
+          <div class="value-num">01</div>
+          <h3>Freshness Above All</h3>
+          <p>We believe that food should be as close to alive as possible when it reaches your table. That's why we never pre-harvest, never store for weeks, and never compromise on freshness for convenience.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">02</div>
+          <h3>Clean &amp; Conscious Growing</h3>
+          <p>Our greens are grown from <strong>organic seeds</strong>, powered by <strong>renewable energy</strong>, and watered with nothing but clean water. No pesticides, no synthetic fertilizers, no shortcuts. We eat what we grow, and we grow what we'd proudly feed our own children.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">03</div>
+          <h3>Community First</h3>
+          <p>We're not trying to ship across the country. We want to feed our neighbors in Franklin and beyond — at the <strong>Franklin Farmers Market</strong> every Saturday and through direct orders — and be a meaningful part of a more local, connected food system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWING PROCESS -->
+  <section class="section" style="background: var(--bg);">
+    <div class="container">
+      <div class="process-grid">
+        <div>
+          <span class="label">How We Grow</span>
+          <h2 style="margin-bottom: 20px;">From Seed to Your Table</h2>
+          <div class="divider divider-left"></div>
+          <p style="margin-bottom: 36px;">Every tray goes through the same careful process. We don't rush it, we don't skip steps, and we check on our greens every single day.</p>
+
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Seed Selection</h4>
+              <p>We source certified <strong>organic seeds</strong> specifically selected for microgreen growing — high germination rates, clean origin, and superior flavor.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Tray Preparation</h4>
+              <p>Each tray is filled with our growing medium — a clean, neutral substrate that holds moisture beautifully without harboring pathogens.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Germination</h4>
+              <p>Seeds are evenly sown and covered to encourage even germination. We check moisture levels twice daily during this critical first phase.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Growing &amp; Daily Care</h4>
+              <p>Once sprouted, trays move to our light-filled growing area. We water carefully from the bottom to prevent mold and encourage strong root development.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>Harvest to Order</h4>
+              <p>When you place your order, we harvest your tray at peak nutrition and freshness — then it goes straight to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+        <img src="images/Greens photos.jpg" alt="Fresh microgreens growing in trays" style="width: 100%; min-height: 420px; max-height: 420px; border-radius: 6px; object-fit: cover; display: block; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section style="background: var(--green); padding: 80px 6%; text-align: center;">
+    <div class="container" style="max-width: 760px;">
+      <h2 style="color: var(--white); font-style: italic; font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.5; margin-bottom: 24px;">"We started this farm for our family. We keep going because of yours."</h2>
+      <p style="color: rgba(255,255,255,0.65); font-size: 0.82rem; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700; opacity: 1;">The Wright Family</p>
+      <div style="margin-top: 36px;">
+        <a href="contact.html" class="btn btn-gold btn-lg">Say Hello</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <span class="label">Fresh This Week</span>
+        <h2>Ready to Try Our Greens?</h2>
+        <p>Place your first order and taste what family-grown freshness actually means.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="shop.html" class="btn btn-gold btn-lg">Shop Now</a>
+        <a href="contact.html" class="btn btn-outline-white btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-name">Hanna's Little Leaves</span>
+        <span class="logo-tagline">Microgreens Farm · Franklin, WI</span>
+        <p>A family farm growing premium microgreens with love. Fresh, clean, and harvested just for you right here in Franklin, Wisconsin.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/hannalittleleaves/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/hannaslittleleaves" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linktr.ee/hannaslittleleaves" target="_blank" rel="noopener" class="social-link" aria-label="Linktree"><i class="fa-brands fa-linktree"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html">Fresh Microgreens</a></li>
+          <li><a href="shop.html">Pea Shoots</a></li>
+          <li><a href="shop.html">Sunflower Shoots</a></li>
+          <li><a href="shop.html">DIY Grow Kit</a></li>
+          <li><a href="shop.html">Subscriptions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:2622215062" style="color:inherit;">(262) 221-5062</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:hannaslittleleaves@gmail.com" style="color:inherit;">hannaslittleleaves@gmail.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <span>Franklin, Wisconsin 53132</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
+        <a href="https://www.facebook.com/hannalittleleaves/" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">📘 Facebook</a>
+        <a href="https://www.instagram.com/hannaslittleleaves" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">📷 Instagram</a>
+        <a href="https://linktr.ee/hannaslittleleaves" target="_blank" rel="noopener" style="text-decoration:none; font-size:0.88rem; color:rgba(255,255,255,0.75);">🔗 Linktree</a>
+      </div>
+      <p>&copy; 2025 Hanna's Little Leaves. All rights reserved.</p>
+      <p>Grown with love in Franklin, WI</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
